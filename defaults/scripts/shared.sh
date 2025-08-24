@@ -181,13 +181,13 @@ function loginstatus(){
 
 function enable-eos-overlay(){
     APP_ID=$2
-    $LEGENDARY eos-overlay enable --prefix "~/.local/share/Steam/steamapps/compatdata/${APP_ID}/pfx"
+    $LEGENDARY eos-overlay enable --prefix "~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/compatdata/${APP_ID}/pfx"
     echo "{\"Type\": \"Overlay\", \"Content\": {\"Message\": \"Enabled\"}}"
 }
 
 function disable-eos-overlay(){
     APP_ID=$2
-    $LEGENDARY eos-overlay disable --prefix "~/.local/share/Steam/steamapps/compatdata/${APP_ID}/pfx"
+    $LEGENDARY eos-overlay disable --prefix "~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/compatdata/${APP_ID}/pfx"
     echo "{\"Type\": \"Overlay\", \"Content\": {\"Message\": \"Enabled\"}}"
 }
 
@@ -249,7 +249,7 @@ function get-exe-list(){
     STEAM_ID="${1}"
     GAME_SHORTNAME="${2}"
     GAME_PATH=$($EPICCONF --get-game-dir $GAME_SHORTNAME --dbfile $DBFILE --offline)
-    export STEAM_COMPAT_DATA_PATH="${HOME}/.local/share/Steam/steamapps/compatdata/${STEAM_ID}"
+    export STEAM_COMPAT_DATA_PATH="${HOME}/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/compatdata/${STEAM_ID}"
     export STEAM_COMPAT_CLIENT_INSTALL_PATH="${GAME_PATH}"
     cd $STEAM_COMPAT_CLIENT_INSTALL_PATH
     LIST=$(find . -name "*.exe")
