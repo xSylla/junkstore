@@ -199,30 +199,9 @@ function export_env_variables() {
 
 function get_steam_env() {
     # limiting the list at the moment, but it might be required to use all the env vars in steam, TBD
-    ENV_LIST=(
-    "XDG_RUNTIME_DIR" 
-    "XAUTHORITY" 
-    "WAYLAND_DISPLAY"
-    "DISPLAY"
-    "XDG_SESSION_ID"
-    "PATH"
-    "DBUS_SESSION_BUS_ADDRESS"
-    )
-    PID=$(cat ~/.steampid)
-    E="/proc/${PID}/environ"
-    STEAM_ENV=$(cat $E | tr '\0' '\n')
-    export_env_variables
-    
-    if [[ "${XDG_CURRENT_DESKTOP}" == "gamescope" ]]; then
-        export DISPLAY=:1
-        export LD_LIBRARY_PATH=/lib64:/lib:/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
-        export LD_PRELOAD=
-    else
-        export LD_LIBRARY_PATH=/lib64:/lib:/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
-        export LD_PRELOAD=
-        export DISPlAY=:0
-    fi
-    
+    export LD_LIBRARY_PATH=/lib64:/lib:/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
+    export LD_PRELOAD=
+    export DISPlAY=:0    
 
 }
 
