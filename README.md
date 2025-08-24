@@ -2,6 +2,14 @@
 
 ![Decky Loader](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fplugins.deckbrew.xyz%2Fplugins&query=%24%5B%3F(%40.name%20%3D%3D%20'Junk-Store')%5D.downloads&suffix=%20installs&label=decky&color=3ea6a3)
 
+## Flatpak support:
+I edited this project aS I'm running Steam on flatpak and I didn't want to loose a cool plugin.
+You've to replace all the files that I edited (check latest commits).
++
+You've to add the following permissions with FlatSeal or KDE settings:
+/var/home/$(whoami)/Games:ro
+/var/home/$(whoami)/Homebrew:rw
+
 ## About Junk-Store
 Imagine having all your streaming services unified into one interface—a single hub where you can navigate your Netflix, Prime Video (Amazon), Hulu, Neon accounts, and more, all in one easy-to-search platform. Think of something like Kodi, and you'll get a sense of what we’re aiming to build for the Steam Deck.
 
