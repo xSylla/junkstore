@@ -191,12 +191,6 @@ function disable-eos-overlay(){
     echo "{\"Type\": \"Overlay\", \"Content\": {\"Message\": \"Enabled\"}}"
 }
 
-function export_env_variables() {
-    while read -r line; do
-        export $line
-    done <<< $STEAM_ENV
-}
-
 function get_steam_env() {
     # limiting the list at the moment, but it might be required to use all the env vars in steam, TBD
     export LD_LIBRARY_PATH=/lib64:/lib:/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
